@@ -157,7 +157,7 @@ input[type="checkbox"] {
     margin-bottom: 20px;
 }
 
-.search {
+.text-input {
     display: flex;
     font-size: 15px;
     accent-color: var(--color-primary);
