@@ -2,12 +2,66 @@
     <html lang="en">
         <head>
             <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Habit Tracker</title>
+
+            <!--Typography Inter-->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+            <!--Icons-->
+            <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+            <link rel="stylesheet" href="style.css">
+            <script src="script.js" defer></script>
+            
         </head>
 
 <body>
-<h1>Habit Tracker</h1>
-<p>the tracker will be here</p>
-</body>
+    <main class="container">
+        <h1>Hello !</h1>
+        
+        <div class="box">
+            
+            <div class="today-habits">
+            <h2>Today's Habits</h2>
+            
+            <div class="new-habit">
+            <input class="search" type="search" placeholder="Add a new habit"></input>
+            <button class="btn btn-primary">
+                <i class="fi fi-rr-plus"></i>
+            </div>
+            
+            <button class="btn btn-primary">
+                <i class="fi fi-rr-plus"></i>New Habit</button>
+            </div>
+            
+            <div class="today-habits">
+              <div class="habit">
+                <input type="checkbox" id="habit">
+                <p>Drink Your Water</p>
+                <a><i class="fi fi-rr-pencil"></i></a>
+              </div>
+             
+              <div class="habit is-done">
+                <input type="checkbox" id="habit" checked>
+                <p>Make your bed</p>
+                <a><i class=" fi fi-rr-pencil"></i></a>
+              </div>
 
+            </div>
+
+        </div>
+    
+        <div class="box" id="completion">
+            <p>80% completed ★</p>
+            <progress class="progress" id="file" max="100" value="80">80%</progress>
+        </div>
+    </main>
+</body>
+<footer class="footer">
+    <p>Developed by <a href="https://github.com/meliasss" target="_blank">Laura Mongin</a></p>
+    <p>Icons for Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a></p>
+</footer>
 </html>
