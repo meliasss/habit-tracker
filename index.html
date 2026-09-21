@@ -27,37 +27,29 @@
             <div class="today-habits">
             <h2>Today's Habits</h2>
             
+            <!-- New Habit Form Hidden -->
             <div class="new-habit" id="new-habit">
             <input class="text-input" type="text" placeholder="Add a new habit"><button class="btn btn-primary" id="add-habit-button">
                 <i class="fi fi-rr-plus"></i>
                 </button></input>
             </div>
             
+            <!-- New Habit Button -->
             <button class="btn btn-primary" id="add-habit">
                 <i class="fi fi-rr-plus"></i>New Habit
             </button>
             </div>
             
+            <!-- Habits List -->
             <div class="today-habits" id="habits-list">
-              <div class="habit">
-                <input type="checkbox">
-                <p>Drink Your Water</p>
-                <a><i class="fi fi-rr-pencil"></i></a>
-              </div>
-             
-              <div class="habit is-done">
-                <input type="checkbox" checked>
-                <p>Make your bed</p>
-                <a><i class=" fi fi-rr-pencil"></i></a>
-              </div>
-
+            <!-- Habits will be added here dynamically -->
             </div>
 
         </div>
-    
+        <!-- Progress Bar -->
         <div class="box" id="completion">
-            <p>80% completed ★</p>
-            <progress class="progress" id="file" max="100" value="80">80%</progress>
+            <p>0% completed ★</p>
+            <progress class="progress" id="file" max="" value=""></progress>
         </div>
     </main>
 </body>

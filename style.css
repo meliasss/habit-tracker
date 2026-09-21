@@ -4,7 +4,7 @@
   --color-tertiary: #ffffff;
   --color-other: #FFBEAC;
   --color-text: #2A0900;
-  --radius-card: 30px;
+  --radius-card: 15px;
 }
 
 body {
@@ -118,9 +118,7 @@ p {
     font-weight: 400;
     background-color: var(--color-secondary);
     color: var(--color-text);
-    display: flex;
     gap: 0px 10px;
-    margin-bottom: 10px;
 } 
 
 .habit .fi {
@@ -145,6 +143,7 @@ input[type="checkbox"] {
     accent-color: var(--color-primary);
     width: 100%;
     height: 30px;
+    
 }
 
 .new-habit {
@@ -154,7 +153,6 @@ input[type="checkbox"] {
 .new-habit.is-active {
     display: flex;
     gap: 0px 10px;
-    margin-bottom: 20px;
 }
 
 .text-input {

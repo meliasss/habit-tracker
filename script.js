@@ -7,15 +7,41 @@ const addHabitButton = document.querySelector("#add-habit-button");
 const habitsContainer = document.querySelector("#habits-list");
 const habitCheckbox = document.querySelector("input[type='checkbox']");
 const habitBox = document.querySelector(".habit");
+const progressBar = document.querySelector(".progress");
+const progressText = document.querySelector("#completion p");
 
+// Functions
+
+function updateProgressBar() {
+    progressBar.max = habitsContainer.children.length;
+    progressBar.value = document.querySelectorAll(".habit.is-done").length;
+    progressText.textContent = `${Math.floor(progressBar.value / progressBar.max * 100)}% completed ★`;
+}
+
+// New habit appears when clicking on the button
 newHabitButton.addEventListener("click", () => {
     newHabitDiv.classList.toggle("is-active");
-    console.log("new habit is active");
 });
 
-// Add new habit
 addHabitButton.addEventListener("click", () => {
-    
+    // Check if the habit name already exists & if the habit name is valid
+    const habitText = newHabitTextInput.value.trim();
+    const newName = habitText.toLowerCase();
+
+    if (habitText === "") {
+        alert("The habit name is not valid. Please enter a habit name.");
+        return;
+    }
+
+    const existingNames = document.querySelectorAll(".habit p");
+    for (const name of existingNames) {
+        if (name.textContent.trim().toLowerCase() === newName) {
+            alert("The habit already exists. Please enter a new habit name.");
+            return;
+        }
+    }
+
+    // Add new habit to the list when clicking on the button
     const habit = document.createElement("div");
     habit.classList.add("habit");
     
@@ -32,16 +58,22 @@ addHabitButton.addEventListener("click", () => {
 
     habit.append(checkbox, habitName, editLink);
     habitsContainer.append(habit);
+    
+    // Check a habit state
+    checkbox.addEventListener("change", () => {
+    habit.classList.toggle("is-done");
+    });
+
+    // Clear search bar after adding a habit
+    newHabitTextInput.value = "";
+
+    // Progress bar update
+    checkbox.addEventListener("change", () => {
+    updateProgressBar();
+    });
 
 
-  console.log(newHabitTextInput.value);
+    updateProgressBar();
+    
 });
 
-// Check a habit state
-habitCheckbox.addEventListener("click", () => {
-    habitBox.classList.toggle("is-done");
-    console.log("habit is done");
-
-})
-
-// Growing progress bar
