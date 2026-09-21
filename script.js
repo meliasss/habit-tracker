@@ -1,5 +1,4 @@
 // Call the elements in HTML
-
 const newHabitButton = document.querySelector("#add-habit");
 const newHabitDiv = document.querySelector("#new-habit");
 const newHabitTextInput = document.querySelector(".text-input");
@@ -11,7 +10,6 @@ const progressBar = document.querySelector(".progress");
 const progressText = document.querySelector("#completion p");
 
 // Functions
-
 function updateProgressBar() {
     progressBar.max = habitsContainer.children.length;
     progressBar.value = document.querySelectorAll(".habit.is-done").length;
@@ -21,6 +19,12 @@ function updateProgressBar() {
 // New habit appears when clicking on the button
 newHabitButton.addEventListener("click", () => {
     newHabitDiv.classList.toggle("is-active");
+});
+
+newHabitTextInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        addHabitButton.click();
+    }
 });
 
 addHabitButton.addEventListener("click", () => {
